@@ -1,4 +1,17 @@
+echo "-----------------------"
+echo "Clonando solución"
+echo "-----------------------"
+
+rm -r /build/resuelto
+git clone https://$OAUTH_TOKEN:x-oauth-basic@github.com/jesus-tomas-girones/catalogo_astronomico_resuelto.git resuelto
+echo '\ntest{useTestNG();testLogging {events "passed", "skipped", "failed"}}\n' >> /build/resuelto/app/build.gradle
+rm /salidas/Comun
+
+#echo '\n' >> /repositorios.txt #Mejor no poner, dado que lo añade en cada ejecución 
+
 while read LINE <&3; do
+  cd /build
+  rm -r /build/clonado
   name=$(echo $LINE | cut -d'|' -f2 | sed 's/.$//')
   repo=$(echo $LINE | cut -d'|' -f1)
 
@@ -6,25 +19,43 @@ while read LINE <&3; do
   echo "Clonando para $name"
   echo "-----------------------"
 
-  git clone https://$OAUTH_TOKEN:x-oauth-basic@github.com/$repo clonado
-  cd clonado
+  echo Empezando con el repositorio $repo | tee "/salidas/$name"
 
-  echo '\ntest{useTestNG();testLogging {events "passed", "skipped", "failed"}}\n' >> app/build.gradle
+  git clone https://$OAUTH_TOKEN:x-oauth-basic@github.com/$repo.git clonado
+
+  if [ $? -ne 0 ]; then
+    echo "No podemos clonar $repo" | tee -a "/salidas/$name"
+    echo $name No podemos clonar | tee -a "/salidas/Comun"
+    continue
+  fi
+
+  echo "Copiando"
+
+  rm -r /build/resuelto/app/src/main/java/com/example/catalogoastronomico/*
+  cp -r /build/clonado/catalogo/src/main/java/com/example/catalogoastronomico/* /build/resuelto/app/src/main/java/com/example/catalogoastronomico
+
+  cd /build/resuelto
+
+ # echo '\ntest{useTestNG();testLogging {events "passed", "skipped", "failed"}}\n' >> catalogo/build.gradle
 
   echo "-----------------------"
   echo "Ejecutando tests"
   echo "-----------------------"
 
-  sh gradlew test | grep "Gradle suite > Gradle test >" > resultados
+  sh gradlew clean test > resultados 2>&1
 
-  cat resultados | tee "/salidas/$name"
-  echo Tests pasados: $(grep PASSED resultados | wc -l) | tee -a "/salidas/$name"
-  echo Tests fallidos: $(grep FAILED resultados | wc -l) | tee -a "/salidas/$name"
+  grep "Gradle suite > Gradle test >" resultados > resultados_filtrado
+  cat resultados | tee -a "/salidas/$name"
+  echo Tests pasados: $(grep PASSED resultados_filtrado | wc -l) | tee -a "/salidas/$name"
+  echo Tests fallidos: $(grep FAILED resultados_filtrado | wc -l) | tee -a "/salidas/$name"
+
+  
+  echo $name Tests pasados: $(grep PASSED resultados_filtrado | wc -l) | tee -a "/salidas/Comun"
+  echo $name Tests fallidos: $(grep FAILED resultados_filtrado | wc -l) | tee -a "/salidas/Comun"
 
   echo "-----------------------"
   echo "Limpiando resultados"
   echo "-----------------------"
 
   cd /build
-  rm -r clonado
 done 3< /repositorios.txt

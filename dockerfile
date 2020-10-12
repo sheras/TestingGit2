@@ -6,6 +6,6 @@ FROM gradle:6.6-jdk
 
 WORKDIR /build
 
-COPY executeTests2.sh .
+COPY executeTests.sh .
 
-CMD ./executeTests2.sh
+CMD ./executeTests.sh
