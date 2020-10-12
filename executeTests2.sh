@@ -2,6 +2,7 @@ echo "-----------------------"
 echo "Clonando solución"
 echo "-----------------------"
 
+rm -r /build/resuelto
 git clone https://$OAUTH_TOKEN:x-oauth-basic@github.com/jesus-tomas-girones/catalogo_astronomico_resuelto.git resuelto
 echo '\ntest{useTestNG();testLogging {events "passed", "skipped", "failed"}}\n' >> /build/resuelto/app/build.gradle
 rm /salidas/Comun

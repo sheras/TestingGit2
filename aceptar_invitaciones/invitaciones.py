@@ -2,7 +2,6 @@ import os
 import requests
 
 OAUTH_TOKEN = os.environ['OAUTH_TOKEN']
-
 headers = {"Authorization": f"token {OAUTH_TOKEN}"}
 
 invitations = requests.get('https://api.github.com/user/repository_invitations', headers=headers)

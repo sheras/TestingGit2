@@ -1,13 +1,16 @@
 PARA TRABAJAR CON DOKER:
 
-Crear imagen: docker build -t nombre_imagen .
-Consultar imágenes en: ... gradle
-Ejecutar imagen: docker run nombre_imagen
+- Crear imagen: docker build -t nombre_imagen .
+
+docker build -t testing_test .
+
+- Consultar imágenes en: ... gradle
+- Ejecutar imagen: docker run nombre_imagen
 
 
 PARA HACER UNA CORRECCIÓN: 
 
-- Arancar bash en Doker:  
+- Arancar bash en Doker: 
 
 docker run -it gradle:6.6-jdk bash
 
@@ -16,9 +19,16 @@ docker run -it gradle:6.6-jdk bash
 git clone https://351533df68b9148e03f789c300f4ba056f22e29f:x-oauth-basic@github.com/jesus-tomas-girones/catalogo_astronomico_resuelto.git clonado
 cd clonado
 
+
+git clone https://351533df68b9148e03f789c300f4ba056f22e29f:x-oauth-basic@github.com/RubenPardo/CatalogoAstronomico.git clonado
+cd clonado
+
 - Añadomos linea adicional al final del fichero app/build.gradle NOTA: Se podría poner en el proyecto base.
 
 echo '\ntest{useTestNG();testLogging {events "passed", "skipped", "failed"}}\n' >> app/build.gradle
+
+echo '\ntest{useTestNG();testLogging {events "passed", "skipped", "failed"}}\n' >> catalogo/build.gradle
+
 
 ERROR: Los \n no los inserta como saltos.
 DUDA: Como instalar un editor? 
@@ -33,7 +43,7 @@ docker run -it -v ./salidas:/salidas -v ./repositorios.txt:/repositorios.txt tes
 
 Para Ejecutar la Corrección:
 
-docker-compose --build up
+docker-compose up --build
 
 o sin docker-compose
 
@@ -42,3 +52,15 @@ docker run -it -v "//d/Docencia/_Programación/Corrección Automática Programac
 
 Crear un usuario nuevo y crear un token, con la primera opción de permisos (repo)  
 
+______________________________
+
+PROBAR EN RESUELTO, COPIANDO SOLO LAS CLASES
+
+git clone https://351533df68b9148e03f789c300f4ba056f22e29f:x-oauth-basic@github.com/jesus-tomas-girones/catalogo_astronomico_resuelto.git resuelto
+echo '\ntest{useTestNG();testLogging {events "passed", "skipped", "failed"}}\n' >> app/build.gradle
+
+
+git clone https://351533df68b9148e03f789c300f4ba056f22e29f:x-oauth-basic@github.com/RubenPardo/CatalogoAstronomico.git clonado
+
+rm resuelto/app/src/main/java/com/example/catalogoastronomico/*
+cp clonado/catalogo/src/main/java/com/example/catalogoastronomico/* resuelto/app/src/main/java/com/example/catalogoastronomico
