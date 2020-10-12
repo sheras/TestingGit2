@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+    accepter:
+        build: .
+        environment:
+            - OAUTH_TOKEN=351533df68b9148e03f789c300f4ba056f22e29f

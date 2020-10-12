@@ -1,0 +1,13 @@
+.git
+.gitignore
+
+.dockerignore
+dockerfile
+docker-compose.yml
+
+salidas
+repositorios.txt
+
+apuntes
+ejecutar.bat
+Tareas.md

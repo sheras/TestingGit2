@@ -1,2 +1,4 @@
-jesus-tomas-girones/catalogo_astronomico_resuelto.git|Jesus Resuelto
-jesus-tomas-girones/catalogo_astronomico.git|Jesus Incompleto
+RubenPardo/CatalogoAstronomico|Ruben Pardo
+jjhr7/catalogo_astronomico|Jonathan Javier Hernandez
+frapaoma/tarea_catalogo_astronomico|Francisco Javier Paños Madrona NO ME HA INVITADO
+JorgeGGeasy/catalogo_astronomico|Jorge Grau Giannakakis

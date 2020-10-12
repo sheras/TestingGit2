@@ -9,4 +9,4 @@ services:
             - ./salidas:/salidas
             - ./repositorios.txt:/repositorios.txt
         environment:
-            - OAUTH_TOKEN=4cdfd4b3095ae19cdb7aab9e1e5e22b09a3a450a
+            - OAUTH_TOKEN=351533df68b9148e03f789c300f4ba056f22e29f
