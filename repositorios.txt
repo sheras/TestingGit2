@@ -1,11 +1,40 @@
-RubenPardo/CatalogoAstronomico|Ruben Pardo
-jjhr7/catalogo_astronomico|Jonathan Javier Hernandez
-frapaoma/tarea_catalogo_astronomico|Francisco Javier Paños Madrona
-JorgeGGeasy/catalogo_astronomico|Jorge Grau Giannakakis
-LorelayFlorescu/catalogo_astronomico|Florescu, Lorena Ioana
-JuanC99/catalogo_astronomico|Hernandez Ramirez, Juan Carlos
-ProgramerHayate/catalogo_astronomico|Lopez Gavila, David
-olijuseju/catalogo_astronomico|Peñaranda Jara, Jose Julio
-dpoqramGTI/catalogo_astronomico_daniel_poquet_ramirez|Poquet Ramirez, Daniel
-Kito-beep/catalogo_astronomico|De La Fe Robles, Raúl
-
+Florescu, Lorena Ioana|LorelayFlorescu/catalogo_astronomico
+Paños Madrona, Francisco Javier|frapaoma/tarea_catalogo_astronomico
+De La Fe Robles, Raúl|Kito-beep/catalogo_astronomico
+Lopez Gavila, David|ProgramerHayate/catalogo_astronomico
+Grau Giannakakis, Jorge|JorgeGGeasy/catalogo_astronomico
+Hernandez Ramirez, Juan Carlos|JuanC99/catalogo_astronomico
+Pardo Casanova, Rubén|RubenPardo/CatalogoAstronomico
+Poquet Ramirez, Daniel|dpoqramGTI/catalogo_astronomico_daniel_poquet_ramirez
+Hernandez Ramirez, Jonathan Javier|jjhr7/catalogo_astronomico
+Peñaranda Jara, Jose Julio|olijuseju/catalogo_astronomico
+Amoros Sendra, David|David09x/catalogo_astronomico
+Burruchaga Sola, Daniel|danielei9/catalogo_astronomico
+Enguix Llopis, Pablo|PabloEnguix09/catalogo_astronomico
+Ferrera Sala, Juan|tostyfis/catalogo_astronomico
+Losa García, Alejandro|Losina24/catalogo_astronomico
+Bañuls Mahiques, Ausias|AusiasBM/catalogo_astronomico
+Belloch Martinez, Luis|Luistorch/catalogo_astronomico
+Sirvent Sempere, Sergi|sergisirvent/catalogo_astronomico
+Benitez Estruch, Aitor|aibes1001/catalogo_astronomico
+Candel Sampedro, Yeray|ycansam/catalogo_astronomico
+Cosme Corberá, Vicent|vcosme9/CatalogoAstronomicoCosme
+Campins Pérez, Marc|qampinz/catalogo_astronomico
+Benavides Belmonte, Daniel|DanielBBHub/catalogo_astronomico
+Marín Samper, Rubén|ruben021000/catalogo_astronomico
+Maldonado Llambies, Adrian|Llambies/catalogo_astronomico
+Villanueva Villalon, Ivan|Ivavil/catalogo_astronomico
+Solís Flores, Javier Andrés|jasolflo/catalogo_astronomico
+Grande López, Belén|begralop/catalogo_astronomico
+Garcia Serquera, Natxo|natxo7/catalogo_astronomico
+Villarroya Martínez, Leire|leire07/catalogo_astronomico
+Gascó Vidal, Ferran|edertrox/catalogo_astronomico
+Marquez Barber, Pere|PereMarquez/catalogo_astronomico
+Costa Escriva, Joan|xbyKreiss/catalogo_astronomico
+Kuzmin, Andrey|andrey342/catalogo_astronomicodvdvd
+Candel Elorriaga, Elvira|cdiocurso2018g01/catalogo_astronomico
+Ferre Carbonell, Enrique|quiqueferre12/catalogo_astronomico
+Valls Martinez, Alberto|Gausek17/catalogo_astronomico
+Buigues Andres, Àngel|angelbuigues/catalogo_astronomico
+Brito Clavijo, Abidán|abidanBrito/catalogo_astronomico
+Guillot Tolosa, Daniel|Daniguillot/catalogo_astronomico_corregido

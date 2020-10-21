@@ -12,9 +12,9 @@ rm /salidas/Comun
 while read LINE <&3; do
   cd /build
   rm -r /build/clonado
-  name=$(echo $LINE | cut -d'|' -f2 | sed 's/.$//')
-  repo=$(echo $LINE | cut -d'|' -f1)
-
+  repo=$(echo $LINE | cut -d'|' -f2| sed 's/.$//')
+  name=$(echo $LINE | cut -d'|' -f1)
+  
   echo "-----------------------"
   echo "Clonando para $name"
   echo "-----------------------"
@@ -25,9 +25,32 @@ while read LINE <&3; do
 
   if [ $? -ne 0 ]; then
     echo "No podemos clonar $repo" | tee -a "/salidas/$name"
-    echo $name No podemos clonar | tee -a "/salidas/Comun"
+    echo $name -- No podemos clonar | tee -a "/salidas/Comun"
     continue
   fi
+
+  cd /build/clonado
+
+  LAST_COMMIT=$(git log -1 --pretty=format:'%an')
+
+  if [ "$LAST_COMMIT" = "Stella Heras" ]; then  #Si el úlimo push es del profesor
+    echo "No ha hecho commit" | tee -a "/salidas/$name"
+    echo $name -- No ha hecho commit | tee -a "/salidas/Comun"
+    continue
+  fi
+
+  if [ "$LAST_COMMIT" = "Jesus Tomas Girones" ]; then  #Si el úlimo push es del profesor
+    echo "No ha hecho commit" | tee -a "/salidas/$name"
+    echo $name -- No ha hecho commit | tee -a "/salidas/Comun"
+    continue
+  fi
+
+  if [ "$LAST_COMMIT" = "" ]; then  #Si no hay ultimo push
+    echo "No hay nada en el repositorio" | tee -a "/salidas/$name"
+    echo $name -- No hay nada en el repositorio | tee -a "/salidas/Comun"
+    continue
+  fi
+
 
   echo "Copiando"
 
@@ -50,8 +73,10 @@ while read LINE <&3; do
   echo Tests fallidos: $(grep FAILED resultados_filtrado | wc -l) | tee -a "/salidas/$name"
 
   
-  echo $name Tests pasados: $(grep PASSED resultados_filtrado | wc -l) | tee -a "/salidas/Comun"
-  echo $name Tests fallidos: $(grep FAILED resultados_filtrado | wc -l) | tee -a "/salidas/Comun"
+  #echo $name Tests pasados: $(grep PASSED resultados_filtrado | wc -l) | tee -a "/salidas/Comun"
+  #echo $name Tests fallidos: $(grep FAILED resultados_filtrado | wc -l) | tee -a "/salidas/Comun"
+  echo $name -- Tests pasados/fallidos: $(grep PASSED resultados_filtrado | wc -l) / $(grep FAILED resultados_filtrado | wc -l) | tee -a "/salidas/Comun"
+
 
   echo "-----------------------"
   echo "Limpiando resultados"
