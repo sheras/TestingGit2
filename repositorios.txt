@@ -1,6 +1,6 @@
 Florescu, Lorena Ioana|LorelayFlorescu/catalogo_astronomico
 Paños Madrona, Francisco Javier|frapaoma/tarea_catalogo_astronomico
-De La Fe Robles, Raúl|Kito-beep/catalogo_astronomico
+De La Fe Robles, Raúl|Kito-beep/delaFeR_U2
 Lopez Gavila, David|ProgramerHayate/catalogo_astronomico
 Grau Giannakakis, Jorge|JorgeGGeasy/catalogo_astronomico
 Hernandez Ramirez, Juan Carlos|JuanC99/catalogo_astronomico
